@@ -106,5 +106,23 @@ namespace ControleFinanceiro
             }
             finally { cn.Desconectar(); }
         }
+
+        private void CalcularValoresselecionados()
+        {
+            double result = 0;
+            foreach (DataGridViewRow row in dgv_dados.Rows)
+            {
+                if (row.Selected)
+                {
+                    result += double.Parse(row.Cells[2].Value.ToString());
+                    lbl_Valores_selecionados.Text = $"Valor selecionado R${result}";
+                }
+            }
+        }
+
+        private void dgv_dados_MouseClick(object sender, MouseEventArgs e)
+        {
+            CalcularValoresselecionados();
+        }
     }
 }

@@ -27,6 +27,7 @@ namespace ControleFinanceiro
         {
             ConexaoDataBase cn = new ConexaoDataBase();
             cn.Searche_Categoria(cbo_categoria);
+            
         }
 
         private void btn_salvar_lancamento_Click(object sender, EventArgs e)

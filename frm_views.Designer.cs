@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_att_view_lancamentos = new System.Windows.Forms.Button();
             this.btn_form_lancamentos = new System.Windows.Forms.Button();
             this.btn_form_categoria = new System.Windows.Forms.Button();
+            this.data_filtro = new System.Windows.Forms.DateTimePicker();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2CircleProgressBar2 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.img_user = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -60,7 +61,7 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_gasto_anual = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.data_filtro = new System.Windows.Forms.DateTimePicker();
+            this.lbl_Valores_selecionados = new System.Windows.Forms.Label();
             this.guna2CircleProgressBar2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_user)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -116,6 +117,23 @@
             this.toolTip1.SetToolTip(this.btn_form_categoria, "Adcionar nova categoria");
             this.btn_form_categoria.UseVisualStyleBackColor = true;
             this.btn_form_categoria.Click += new System.EventHandler(this.btn_form_categoria_Click);
+            // 
+            // data_filtro
+            // 
+            this.data_filtro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.data_filtro.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.data_filtro.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(62)))), ((int)(((byte)(249)))));
+            this.data_filtro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.data_filtro.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.data_filtro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.data_filtro.Location = new System.Drawing.Point(309, 158);
+            this.data_filtro.Name = "data_filtro";
+            this.data_filtro.Size = new System.Drawing.Size(112, 25);
+            this.data_filtro.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.data_filtro, "Selecione uma data para realizar um filtro por mês");
+            this.data_filtro.ValueChanged += new System.EventHandler(this.data_filtro_ValueChanged);
             // 
             // guna2Elipse1
             // 
@@ -194,43 +212,46 @@
             this.dgv_dados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_dados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgv_dados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(62)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_dados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(62)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_dados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgv_dados.ColumnHeadersHeight = 38;
             this.dgv_dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(199)))), ((int)(((byte)(111)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_dados.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgv_dados.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(199)))), ((int)(((byte)(111)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_dados.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgv_dados.GridColor = System.Drawing.Color.White;
             this.dgv_dados.Location = new System.Drawing.Point(12, 9);
-            this.dgv_dados.MultiSelect = false;
             this.dgv_dados.Name = "dgv_dados";
             this.dgv_dados.ReadOnly = true;
+            this.dgv_dados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_dados.RowHeadersVisible = false;
             this.dgv_dados.RowHeadersWidth = 35;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(62)))), ((int)(((byte)(249)))));
-            this.dgv_dados.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(62)))), ((int)(((byte)(249)))));
+            this.dgv_dados.RowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgv_dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_dados.ShowCellToolTips = false;
             this.dgv_dados.Size = new System.Drawing.Size(559, 302);
             this.dgv_dados.TabIndex = 0;
+            this.dgv_dados.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgv_dados_MouseClick);
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(62)))), ((int)(((byte)(249)))));
+            this.guna2Panel2.Controls.Add(this.lbl_Valores_selecionados);
             this.guna2Panel2.Controls.Add(this.data_filtro);
             this.guna2Panel2.Controls.Add(this.btn_form_lancamentos);
             this.guna2Panel2.Controls.Add(this.btn_form_categoria);
@@ -264,7 +285,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(424, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(4, 53);
+            this.label2.Size = new System.Drawing.Size(4, 56);
             this.label2.TabIndex = 6;
             // 
             // label1
@@ -453,22 +474,16 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "Gasto Anual";
             // 
-            // data_filtro
+            // lbl_Valores_selecionados
             // 
-            this.data_filtro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.data_filtro.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.data_filtro.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(62)))), ((int)(((byte)(249)))));
-            this.data_filtro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.data_filtro.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.data_filtro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.data_filtro.Location = new System.Drawing.Point(292, 154);
-            this.data_filtro.Name = "data_filtro";
-            this.data_filtro.Size = new System.Drawing.Size(127, 29);
-            this.data_filtro.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.data_filtro, "Selecione uma data para realizar um filtro por mês");
-            this.data_filtro.ValueChanged += new System.EventHandler(this.data_filtro_ValueChanged);
+            this.lbl_Valores_selecionados.AutoSize = true;
+            this.lbl_Valores_selecionados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Valores_selecionados.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_Valores_selecionados.Location = new System.Drawing.Point(423, 116);
+            this.lbl_Valores_selecionados.Name = "lbl_Valores_selecionados";
+            this.lbl_Valores_selecionados.Size = new System.Drawing.Size(34, 16);
+            this.lbl_Valores_selecionados.TabIndex = 12;
+            this.lbl_Valores_selecionados.Text = "R$...";
             // 
             // frm_views
             // 
@@ -535,6 +550,7 @@
         public System.Windows.Forms.Label lbl_gasto_diario;
         public System.Windows.Forms.Label lbl_gasto_anual;
         private System.Windows.Forms.DateTimePicker data_filtro;
+        private System.Windows.Forms.Label lbl_Valores_selecionados;
     }
 }
 

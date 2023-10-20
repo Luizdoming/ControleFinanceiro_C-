@@ -2,7 +2,6 @@ D:\System_Desenvolvidos\Controle_Financeiro\ControleFinanceiro\bin\Release\Contr
 D:\System_Desenvolvidos\Controle_Financeiro\ControleFinanceiro\bin\Release\ControleFinanceiro.exe
 D:\System_Desenvolvidos\Controle_Financeiro\ControleFinanceiro\bin\Release\ControleFinanceiro.pdb
 D:\System_Desenvolvidos\Controle_Financeiro\ControleFinanceiro\bin\Release\Guna.UI2.dll
-D:\System_Desenvolvidos\Controle_Financeiro\ControleFinanceiro\bin\Release\MySql.Data.dll
 D:\System_Desenvolvidos\Controle_Financeiro\ControleFinanceiro\bin\Release\Google.Protobuf.dll
 D:\System_Desenvolvidos\Controle_Financeiro\ControleFinanceiro\bin\Release\ZstdNet.dll
 D:\System_Desenvolvidos\Controle_Financeiro\ControleFinanceiro\bin\Release\K4os.Compression.LZ4.Streams.dll
